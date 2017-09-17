@@ -1,6 +1,6 @@
 import {
-  NativeModules, 
-  Platform, 
+  NativeModules,
+  Platform,
   NativeEventEmitter,
 } from 'react-native';
 import Base64 from 'base-64';
@@ -69,8 +69,8 @@ export default class JMessage {
   static logout() {
     return JMessageModule.logout();
   }
-  static sendSingleMessage({name, type, data={}}) {
-    return JMessageModule.sendSingleMessage(name, type, data)
+  static sendSingleMessage({appkey, name, type, data={}}) {
+    return JMessageModule.sendSingleMessage(appkey, name, type, data)
       .then(message => formatMessage(message));
   }
   static sendGroupMessage({gid, type, data={}}) {
